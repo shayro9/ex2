@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/shayr/Documents/GitHub/ex2/Card.h
+string
+-
+Player.h
+C:/Users/shayr/Documents/GitHub/ex2/Player.h
+utilities.h
+C:/Users/shayr/Documents/GitHub/ex2/utilities.h
+
+C:/Users/shayr/Documents/GitHub/ex2/Mtmchkin.h
+Card.h
+C:/Users/shayr/Documents/GitHub/ex2/Card.h
+iostream
+-
+
+C:/Users/shayr/Documents/GitHub/ex2/test.cpp
+functional
+-
+string
+-
+iostream
+-
+Player.h
+C:/Users/shayr/Documents/GitHub/ex2/Player.h
+Card.h
+C:/Users/shayr/Documents/GitHub/ex2/Card.h
+Mtmchkin.h
+C:/Users/shayr/Documents/GitHub/ex2/Mtmchkin.h
+
+C:/Users/shayr/Documents/GitHub/ex2/utilities.cpp
+utilities.h
+C:/Users/shayr/Documents/GitHub/ex2/utilities.h
+iostream
+-
+
+C:/Users/shayr/Documents/GitHub/ex2/utilities.h
+

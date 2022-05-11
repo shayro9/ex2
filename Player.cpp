@@ -9,7 +9,15 @@ Player::~Player (){
 }
 
 Player& Player:: operator=(const Player& other) {
-    name = new char[strlen(other.name)];
+    if (this== &other){
+        return *this;
+    }
+    delete[] name;
+    name = new char[strlen(other.name)+1];
+    for (int i = 0; i < strlen(other.name); ++i) {
+        name[i] = other.name[i];
+    }
+    name[strlen(other.name)] = 0;
     level = other.level;
     force = other.force;
     maxHP = other.maxHP;
@@ -53,16 +61,17 @@ Player::Player(char *name, int maxHP, int force) {
 }
 
 Player::Player(const Player &player) :
-    name(new char[strlen(player.name)]),
+    name(new char[strlen(player.name)]+1),
     level(player.level),
     force(player.force),
     maxHP(player.maxHP),
     HP(player.HP),
     coins(player.coins)
 {
-    for (int i = 0; i < strlen((player.name)); ++i) {
+    for (int i = 0; i < strlen(player.name); ++i) {
         name[i] = player.name[i];
     }
+    name[strlen(player.name)] = 0;
 }
 
 void Player::printInfo() {

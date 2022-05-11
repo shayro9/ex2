@@ -5,7 +5,7 @@
 #include "Player.h"
 #include "Card.h"
 #include "Mtmchkin.h"
-
+/*
 bool testMtmchkin()
 {
     Card cards[4];
@@ -40,7 +40,7 @@ bool testCard()
     player.printInfo();
     return true;
 }
-
+*/
 bool testPlayer()
 {
     Player player1("Efrat",150,2);  //Efrat has 150 max HP and 2 points of force.
@@ -88,8 +88,8 @@ int main(int argc, char *argv[])
     const int NUMBER_OF_TESTS = 3;
     std::function<bool()> tests[NUMBER_OF_TESTS] = {
         testPlayer,
-        testCard,
-        testMtmchkin
+        //testCard,
+        //testMtmchkin
     };
 
     if (argc < 2) {

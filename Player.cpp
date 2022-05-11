@@ -4,6 +4,44 @@
 
 #include "Player.h"
 #include "utilities.h"
+Player::~Player (){
+    delete[] name;
+}
+
+Player& Player:: operator=(const Player& other) {
+    name = new char[strlen(other.name)];
+    level = other.level;
+    force = other.force;
+    maxHP = other.maxHP;
+    HP = other.HP;
+    coins = other.coins;
+    return *this ;
+}
+
+void Player::levelUp() {
+    if (level < 10) {
+        level++;
+    }
+}
+
+void Player::buff(int amount) {
+    force += amount;
+}
+
+void Player::damage(int amount) {
+    if (HP > amount) {
+        HP -= amount;
+    }
+    HP = 0;
+}
+
+void Player::addCoins(int amount) {
+    coins += amount;
+}
+
+int Player::getAttackStrength() {
+    return (force + level);
+}
 
 Player::Player(char *name, int maxHP, int force) {
     Player::name = name;

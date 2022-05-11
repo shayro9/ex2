@@ -6,7 +6,7 @@
 #define EX2_PLAYER_H
 
 
-#include <string>
+#include "string.h"
 #include "utilities.h"
 
 class Player {
@@ -14,7 +14,7 @@ public:
     explicit Player (char* name, int maxHP=100, int force=5);
     ~Player ();
     Player (const Player& player);
-    Player& operator= (const Player& player);
+    Player& operator= (const Player& other);
     void printInfo();
     void levelUp();
     int getLevel() const;

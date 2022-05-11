@@ -23,7 +23,7 @@ bool testMtmchkin()
     }
     return true;
 }
-
+*/
 bool testCard()
 {
     Player player("Efrat",150,2);  //Efrat has 150 max HP and 2 points of force.
@@ -40,7 +40,7 @@ bool testCard()
     player.printInfo();
     return true;
 }
-*/
+
 bool testPlayer()
 {
     Player player1("Efrat",150,2);  //Efrat has 150 max HP and 2 points of force.
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
     const int NUMBER_OF_TESTS = 3;
     std::function<bool()> tests[NUMBER_OF_TESTS] = {
         testPlayer,
-        //testCard,
+        testCard,
         //testMtmchkin
     };
 

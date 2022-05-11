@@ -4,9 +4,36 @@
 
 #include "Player.h"
 #include "utilities.h"
+
+Player::Player(char *name, int maxHP, int force) {
+    Player::name = name;
+    Player::level = 1;
+    Player::force = force;
+    Player::maxHP = maxHP;
+    Player::HP = maxHP;
+    Player::coins = 0;
+}
+
+
 Player::~Player (){
     delete[] name;
 }
+
+
+Player::Player(const Player &player) :
+        name(new char[strlen(player.name)+1]),
+        level(player.level),
+        force(player.force),
+        maxHP(player.maxHP),
+        HP(player.HP),
+        coins(player.coins)
+{
+    for (int i = 0; i < strlen(player.name); ++i) {
+        name[i] = player.name[i];
+    }
+    name[strlen(player.name)] = 0;
+}
+
 
 Player& Player:: operator=(const Player& other) {
     if (this== &other){
@@ -26,60 +53,22 @@ Player& Player:: operator=(const Player& other) {
     return *this ;
 }
 
+void Player::printInfo() {
+    printPlayerInfo(name,level,force,HP,coins);
+}
+
 void Player::levelUp() {
     if (level < 10) {
         level++;
     }
 }
 
-void Player::buff(int amount) {
-    force += amount;
-}
-
-void Player::damage(int amount) {
-    if (HP > amount) {
-        HP -= amount;
-    }
-    HP = 0;
-}
-
-void Player::addCoins(int amount) {
-    coins += amount;
-}
-
-int Player::getAttackStrength() {
-    return (force + level);
-}
-
-Player::Player(char *name, int maxHP, int force) {
-    Player::name = name;
-    Player::level = 1;
-    Player::force = force;
-    Player::maxHP = maxHP;
-    Player::HP = maxHP;
-    Player::coins = 0;
-}
-
-Player::Player(const Player &player) :
-    name(new char[strlen(player.name)]+1),
-    level(player.level),
-    force(player.force),
-    maxHP(player.maxHP),
-    HP(player.HP),
-    coins(player.coins)
-{
-    for (int i = 0; i < strlen(player.name); ++i) {
-        name[i] = player.name[i];
-    }
-    name[strlen(player.name)] = 0;
-}
-
-void Player::printInfo() {
-    printPlayerInfo(name,level,force,HP,coins);
-}
-
 int Player::getLevel() const {
     return level;
+}
+
+void Player::buff(int amount) {
+    force += amount;
 }
 
 void Player::heal(int amount) {
@@ -91,8 +80,19 @@ void Player::heal(int amount) {
     HP += amount;
 }
 
+void Player::damage(int amount) {
+    if (HP > amount) {
+        HP -= amount;
+    }
+    HP = 0;
+}
+
 bool Player::isKnockedOut() const{
     return HP == 0;
+}
+
+void Player::addCoins(int amount) {
+    coins += amount;
 }
 
 bool Player::pay(int amount) {
@@ -100,4 +100,8 @@ bool Player::pay(int amount) {
         return false;
     coins -= amount;
     return true;
+}
+
+int Player::getAttackStrength() const{
+    return (force + level);
 }

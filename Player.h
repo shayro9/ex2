@@ -24,7 +24,7 @@ public:
     bool isKnockedOut() const;
     void addCoins (int amount);
     bool pay (int amount);
-    int getAttackStrength ();
+    int getAttackStrength () const;
 
 
 

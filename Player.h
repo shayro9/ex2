@@ -6,15 +6,16 @@
 #define EX2_PLAYER_H
 
 
-#include "string.h"
+#include "string"
 #include "utilities.h"
+typedef std::string String;
 
 class Player {
 public:
-    explicit Player (char* name, int maxHP=100, int force=5);
-    ~Player ();
-    Player (const Player& player);
-    Player& operator= (const Player& other);
+    explicit Player (String& name, int maxHP=100, int force=5);
+    ~Player () = default;
+    Player (const Player& player) = default;
+    Player& operator= (const Player& other) = default;
     void printInfo();
     void levelUp();
     int getLevel() const;
@@ -29,12 +30,12 @@ public:
 
 
 private:
-    char* name;
-    int level;
-    int force;
-    int maxHP;
-    int HP;
-    int coins;
+    String m_name;
+    int m_level;
+    int m_force;
+    int m_maxHP;
+    int m_HP;
+    int m_coins;
 
 };
 

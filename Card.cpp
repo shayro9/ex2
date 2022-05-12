@@ -39,8 +39,6 @@ void Card:: applyEncounter(Player& player) const{
     }
 }
 
-
-
 void Card:: printInfo() const{
     switch(m_effect)
     {

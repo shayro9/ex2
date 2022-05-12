@@ -82,10 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/shayr/Documents/GitHub/ex2/Card.cpp">
+			<Option target="ex2"/>
+		</Unit>
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex2/Card.h">
 			<Option target="ex2"/>
 		</Unit>
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex2/Mtmchkin.h">
+			<Option target="ex2"/>
+		</Unit>
+		<Unit filename="C:/Users/shayr/Documents/GitHub/ex2/Player.cpp">
+			<Option target="ex2"/>
+		</Unit>
+		<Unit filename="C:/Users/shayr/Documents/GitHub/ex2/Player.h">
 			<Option target="ex2"/>
 		</Unit>
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex2/test.cpp">

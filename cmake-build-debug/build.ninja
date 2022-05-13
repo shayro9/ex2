@@ -49,6 +49,15 @@ cmake_ninja_workdir = C$:/Users/michalmaya/Documents/GitHub/ex2/cmake-build-debu
 
 build cmake_object_order_depends_target_ex2: phony || CMakeFiles/ex2.dir
 
+build CMakeFiles/ex2.dir/Card.cpp.obj: CXX_COMPILER__ex2_Debug C$:/Users/michalmaya/Documents/GitHub/ex2/Card.cpp || cmake_object_order_depends_target_ex2
+  DEP_FILE = CMakeFiles\ex2.dir\Card.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -IC:/Users/michalmaya/Documents/GitHub/ex2/.
+  OBJECT_DIR = CMakeFiles\ex2.dir
+  OBJECT_FILE_DIR = CMakeFiles\ex2.dir
+  TARGET_COMPILE_PDB = CMakeFiles\ex2.dir\
+  TARGET_PDB = ex2.pdb
+
 build CMakeFiles/ex2.dir/Player.cpp.obj: CXX_COMPILER__ex2_Debug C$:/Users/michalmaya/Documents/GitHub/ex2/Player.cpp || cmake_object_order_depends_target_ex2
   DEP_FILE = CMakeFiles\ex2.dir\Player.cpp.obj.d
   FLAGS = -g -std=gnu++14
@@ -84,7 +93,7 @@ build CMakeFiles/ex2.dir/utilities.cpp.obj: CXX_COMPILER__ex2_Debug C$:/Users/mi
 #############################################
 # Link the executable ex2.exe
 
-build ex2.exe: CXX_EXECUTABLE_LINKER__ex2_Debug CMakeFiles/ex2.dir/Player.cpp.obj CMakeFiles/ex2.dir/test.cpp.obj CMakeFiles/ex2.dir/utilities.cpp.obj
+build ex2.exe: CXX_EXECUTABLE_LINKER__ex2_Debug CMakeFiles/ex2.dir/Card.cpp.obj CMakeFiles/ex2.dir/Player.cpp.obj CMakeFiles/ex2.dir/test.cpp.obj CMakeFiles/ex2.dir/utilities.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ex2.dir

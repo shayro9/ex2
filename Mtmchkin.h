@@ -63,6 +63,12 @@ public:
      */
     GameStatus getGameStatus() const;
 
+    /*
+     *  set the status of the game in case of win or lose:
+     *
+     *  @return
+     *          void
+     */
     void setWinLose();
 
 

@@ -23,17 +23,17 @@ Mtmchkin:: ~Mtmchkin(){
 
 Mtmchkin:: Mtmchkin (const Mtmchkin& other) :
     m_player(other.m_player){
-    m_cardsArray= new Card[other.m_numOfCards];
+    m_cardsArray = new Card[other.m_numOfCards];
     for (int i=0; i<other.m_numOfCards; i++){
-        m_cardsArray[i]= other.m_cardsArray[i];
+        m_cardsArray[i] = other.m_cardsArray[i];
     }
-    m_numOfCards=other.m_numOfCards;
-    m_cardIndex=other.m_cardIndex;
-    m_status= other.m_status;
+    m_numOfCards = other.m_numOfCards;
+    m_cardIndex = other.m_cardIndex;
+    m_status = other.m_status;
 }
 
 Mtmchkin& Mtmchkin:: operator=(const Mtmchkin& other){
-    if (this== &other){
+    if (this == &other){
         return *this;
     }
     delete[] m_cardsArray;

@@ -1,7 +1,3 @@
-//
-// Created by michalmaya on 10/05/2022.
-//
-
 #include "Player.h"
 #include "utilities.h"
 
@@ -50,6 +46,7 @@ void Player::damage(int amount) {
         return;
     if (m_HP > amount) {
         m_HP -= amount;
+        return;
     }
     m_HP = 0;
 }

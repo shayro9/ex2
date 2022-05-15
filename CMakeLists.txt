@@ -9,6 +9,7 @@ add_executable(ex2
         Card.h
         Card.cpp
         Mtmchkin.h
+        Mtmchkin.cpp
         Player.cpp
         Player.h
         test.cpp

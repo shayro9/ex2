@@ -28,7 +28,7 @@ public:
      * @result
      *      An instance of Mtmchkin
     */
-    Mtmchkin(String playerName, const Card* cardsArray, int numOfCards);
+    Mtmchkin(const String& playerName, const Card* cardsArray, int numOfCards);
 
     ~Mtmchkin();
 
@@ -63,14 +63,15 @@ public:
      */
     GameStatus getGameStatus() const;
 
+    void setWinLose();
+
 
 private:
     Player m_player;
-    const Card* m_cardsArray;
+    Card* m_cardsArray;
     int m_numOfCards;
     int m_cardIndex;
     GameStatus m_status;
-
 };
 
 

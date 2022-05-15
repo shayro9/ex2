@@ -142,6 +142,30 @@ Card.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex2.dir\Card.cpp.s
 .PHONY : Card.cpp.s
 
+Mtmchkin.obj: Mtmchkin.cpp.obj
+.PHONY : Mtmchkin.obj
+
+# target to build an object file
+Mtmchkin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex2.dir\Mtmchkin.cpp.obj
+.PHONY : Mtmchkin.cpp.obj
+
+Mtmchkin.i: Mtmchkin.cpp.i
+.PHONY : Mtmchkin.i
+
+# target to preprocess a source file
+Mtmchkin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex2.dir\Mtmchkin.cpp.i
+.PHONY : Mtmchkin.cpp.i
+
+Mtmchkin.s: Mtmchkin.cpp.s
+.PHONY : Mtmchkin.s
+
+# target to generate assembly for a file
+Mtmchkin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex2.dir\Mtmchkin.cpp.s
+.PHONY : Mtmchkin.cpp.s
+
 Player.obj: Player.cpp.obj
 .PHONY : Player.obj
 
@@ -226,6 +250,9 @@ help:
 	@echo ... Card.obj
 	@echo ... Card.i
 	@echo ... Card.s
+	@echo ... Mtmchkin.obj
+	@echo ... Mtmchkin.i
+	@echo ... Mtmchkin.s
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s

@@ -12,7 +12,7 @@ typedef std::string String;
 
 class Player {
 public:
-    explicit Player (String& name, int maxHP=100, int force=5);
+    explicit Player (const char* name, int maxHP=100, int force=5);
     ~Player () = default;
     Player (const Player& player) = default;
     Player& operator= (const Player& other) = default;

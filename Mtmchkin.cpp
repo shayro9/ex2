@@ -5,23 +5,24 @@
 #include "Mtmchkin.h"
 
 
-Mtmchkin:: Mtmchkin(String playerName, const Card *cardsArray, int numOfCards)  {
-    m_player = Player(playerName);
+Mtmchkin::Mtmchkin(const String& playerName, const Card *cardsArray, int numOfCards):
+    m_player(playerName.c_str())
+    {
     m_cardsArray= new Card[numOfCards];
     for (int i=0; i<numOfCards; i++){
-        m_cardsArray[i]=cardsArray[i];
+        m_cardsArray[i] = cardsArray[i];
     }
-    m_numOfCards=numOfCards;
-    m_cardIndex=0;
-    m_status= GameStatus::MidGame;
+    m_numOfCards = numOfCards;
+    m_cardIndex = 0;
+    m_status = GameStatus::MidGame;
 }
 
 Mtmchkin:: ~Mtmchkin(){
     delete[] m_cardsArray;
 }
 
-Mtmchkin:: Mtmchkin (const Mtmchkin& other){
-    m_player = other.m_player;
+Mtmchkin:: Mtmchkin (const Mtmchkin& other) :
+    m_player(other.m_player){
     m_cardsArray= new Card[other.m_numOfCards];
     for (int i=0; i<other.m_numOfCards; i++){
         m_cardsArray[i]= other.m_cardsArray[i];
@@ -51,15 +52,16 @@ void Mtmchkin:: playNextCard(){
     Card currentCard = m_cardsArray[m_cardIndex];
     currentCard.printInfo();
     currentCard.applyEncounter(m_player);
+    setWinLose();
     m_player.printInfo();
     m_cardIndex++;
     if (m_cardIndex==m_numOfCards){
-        m_cardIndex==0;
+        m_cardIndex=0;
     }
 }
 
 bool Mtmchkin:: isOver() const{
-    if (m_status!= GameStatus::MidGame){
+    if (m_status != GameStatus::MidGame){
         return true;
     }
     return false;
@@ -69,4 +71,13 @@ GameStatus  Mtmchkin:: getGameStatus() const{
     return m_status;
 }
 
-
+void Mtmchkin::setWinLose(){
+    if(m_player.getLevel() == 10)
+    {
+        m_status = GameStatus::Win;
+    }
+    if(m_player.isKnockedOut())
+    {
+        m_status = GameStatus::Loss;
+    }
+}

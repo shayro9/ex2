@@ -32,7 +32,7 @@ void Card:: applyEncounter(Player& player) const{
             break;
         case CardType::Buff:
             if (player.pay(m_stats.cost))
-                player.buff(m_stats.heal);
+                player.buff(m_stats.buff);
             break;
         default://should not get here;
             return;

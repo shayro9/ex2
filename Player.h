@@ -11,6 +11,7 @@
 typedef std::string String;
 
 class Player {
+
 public:
     explicit Player (const char* name, int maxHP=100, int force=5);
     ~Player () = default;
@@ -26,8 +27,6 @@ public:
     void addCoins (int amount);
     bool pay (int amount);
     int getAttackStrength () const;
-
-
 
 private:
     String m_name;

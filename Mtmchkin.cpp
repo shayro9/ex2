@@ -38,7 +38,7 @@ Mtmchkin& Mtmchkin:: operator=(const Mtmchkin& other){
     }
     delete[] m_cardsArray;
     m_player = other.m_player;
-    m_cardsArray= new Card[other.m_numOfCards];
+    m_cardsArray = new Card[other.m_numOfCards];
     for (int i=0; i<other.m_numOfCards; i++){
         m_cardsArray[i]= other.m_cardsArray[i];
     }

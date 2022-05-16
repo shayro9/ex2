@@ -4,12 +4,15 @@
 
 #include "Card.h"
 
-Card::Card(CardType type, const CardStats& stats) : m_effect(type), m_stats(CardStats
-    (stats.force,stats.hpLossOnDefeat, stats.cost, stats.heal, stats.buff, stats.loot))
+Card::Card(CardType type, const CardStats& stats) :
+    m_effect(type),
+    m_stats(CardStats(stats.force,stats.hpLossOnDefeat,
+                      stats.cost, stats.heal, stats.buff, stats.loot))
 {}
 
 void Card:: applyEncounter(Player& player) const{
     bool win = false;
+
     switch (m_effect) {
         case CardType::Battle:
             if (player.getAttackStrength() >= m_stats.force){
